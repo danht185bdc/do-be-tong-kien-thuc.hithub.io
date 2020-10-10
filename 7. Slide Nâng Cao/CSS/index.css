@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+* ::after,
+* ::before {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+img {
+  width: 100%;
+}
+li {
+  list-style: none;
+}
+a,
+i {
+  display: block;
+  color: inherit;
+}
+
+/* ### */
+/* ### */
+/* ### */
+
+html,
+body,
+.slide-wrapper,
+.slide-wrapper .slides,
+.slide-wrapper .slides > ul,
+.slide-wrapper .slides > ul > li,
+.slide-wrapper .slides > ul > li ._1-slide {
+  width: 100%;
+  height: 100%;
+}
+
+/*
+  Khung slide full màn hình
+    - Các slide
+    - Previous & Next
+*/
+.slide-wrapper {
+  position: relative;
+
+  overflow: hidden;
+  background-color: black;
+}
+/* Các slide */
+.slide-wrapper .slides {
+  position: relative;
+}
+.slide-wrapper .slides > ul {
+  position: relative;
+}
+.slide-wrapper .slides > ul > li {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  transition: 0.4s;
+}
+.slide-wrapper .slides > ul > li ._1-slide {
+  background-size: auto;
+}
+/* Nút */
+.slide-wrapper .nuts {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  color: gray;
+  padding: 0 50px;
+  font-size: 2rem;
+}
+.slide-wrapper .nuts > b {
+  cursor: pointer;
+  transition: 0.4s;
+}
+/* Hover Nút */
+.slide-wrapper .nuts > b:hover {
+  color: white;
+  transition: 0.4s;
+}
+
+/* - EVENT LISTENER 'CLICK' --------------------------------------------------------- */
+/* - Chuyển slide ================ */
+.slide-wrapper .slides > ul li.showing-next {
+  animation: effect-next 1s forwards;
+}
+.slide-wrapper .slides > ul li.showing-previous {
+  animation: effect-previous 1s forwards;
+}
+/* Các hiệu ứng chuyển động */
+@keyframes effect-next {
+  from {
+    opacity: 0;
+    transform: scale(2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes effect-previous {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

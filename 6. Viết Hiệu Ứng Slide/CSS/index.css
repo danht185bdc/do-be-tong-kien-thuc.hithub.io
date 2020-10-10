@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+* ::after,
+* ::before {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+img {
+  width: 100%;
+}
+li {
+  list-style: none;
+}
+a,
+i {
+  display: block;
+  color: inherit;
+}
+
+/* BIẾN */
+:root {
+  /* Color */
+  --mau-xam: #eadddd;
+
+  /* Hình vuông */
+  --sizeHinhVuong: 15px;
+
+  /* Font */
+  --ptSerif: "PT Serif", serif;
+}
+
+/* ### */
+/* ### */
+/* ### */
+
+html,
+body,
+.full-screen {
+  width: 100%;
+  height: 100%;
+}
+
+/*
+###
+###
+###
+*/
+
+.slides {
+  position: relative;
+}
+/* Nội dung slide */
+.slides ul.full-screen li._1-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-size: cover;
+  overflow: hidden;
+
+  /* effect */
+  transition: 0.4s;
+  opacity: 0;
+}
+.slides ul.full-screen li._1-slide.active {
+  /* effect */
+  opacity: 1;
+  transition: 0.4s;
+}
+.slides ul.full-screen li._1-slide .anh {
+  position: relative;
+}
+/* Chia layer */
+.anh .effect-1_1,
+.anh .effect-1_2,
+.anh .effect-1_3,
+.anh .text {
+  position: absolute;
+  transition: 0.4s;
+}
+
+/* Xử lý hiệu ứng */
+.anh .effect-1_1 {
+  top: -80%;
+  opacity: 0;
+}
+.anh .effect-1_2 {
+  top: -40%;
+  opacity: 0;
+}
+.anh .effect-1_3 {
+  left: 80%;
+  opacity: 0;
+}
+.anh .text {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  z-index: 1;
+
+  width: 26%;
+  height: auto;
+  color: white;
+  font-family: var(--ptSerif);
+  padding-left: 5%;
+}
+/* Xử lý text */
+.anh .text > h2 {
+  font-size: 90px;
+  font-weight: normal;
+
+  margin-bottom: 20px;
+  opacity: 0;
+}
+.anh .text > small {
+  font-size: 33px;
+  font-weight: bold;
+
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  display: block;
+
+  position: relative;
+  opacity: 0;
+}
+.anh .text > small::before {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 3px;
+
+  background-color: white;
+  opacity: 0;
+}
+.anh .text > p {
+  margin-bottom: 50px;
+
+  font-size: 20px;
+  line-height: 1.4rem;
+  opacity: 0;
+}
+.anh .text .see-project {
+  border: 2px solid white;
+  display: inline-block;
+  text-transform: capitalize;
+  cursor: pointer;
+  padding: 10px 40px;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  transition: 0.4s;
+  background-color: transparent;
+  opacity: 0;
+}
+.anh .text .see-project:hover {
+  background-color: rgba(211, 211, 211, 0.376);
+  transition: 0.4s;
+}
+
+/* ### */
+/* ### */
+/* ### */
+
+/* Chuyển slide */
+.chuyen-slide {
+  text-align: center;
+  margin: 10px 0;
+  width: 100%;
+
+  position: absolute;
+  bottom: 10px;
+}
+.chuyen-slide > ul {
+  display: inline;
+  padding: 10px 0;
+}
+.chuyen-slide > ul > li {
+  display: inline-block;
+  text-indent: -9999px;
+  margin: 5px;
+  cursor: pointer;
+
+  width: var(--sizeHinhVuong);
+  height: var(--sizeHinhVuong);
+  border-radius: 50px;
+
+  transition: 0.4s;
+  background-color: var(--mau-xam);
+}
+.chuyen-slide > ul > li:hover,
+.chuyen-slide > ul li.active {
+  background-color: red;
+}
+
+/* Effect Chuyển Động CSS3 */
+li._1-slide.active .anh .effect-1_1 {
+  animation: nen-duoi-1 1s forwards;
+}
+li._1-slide.active .anh .effect-1_2 {
+  animation: nen-duoi-2 1s forwards;
+  animation-delay: 0.2s;
+}
+li._1-slide.active .anh .effect-1_3 {
+  animation: nen-3 1s forwards;
+}
+@keyframes nen-duoi-1 {
+  from {
+    transform: translateX(100%);
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    transform: translateY(0%);
+    opacity: 0.3;
+  }
+}
+@keyframes nen-duoi-2 {
+  from {
+    transform: translateX(100%);
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    transform: translateY(0%);
+    opacity: 0.7;
+  }
+}
+@keyframes nen-3 {
+  from {
+    transform: translateX(-100%);
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    transform: translateY(0%);
+    opacity: 0.9;
+  }
+}
+/* ### */
+/* li._1-slide.active .anh .text {
+  opacity: 1;
+  transition-delay: 1.2s;
+} */
+li._1-slide.active .anh .text > h2 {
+  animation: chu-chay 1s forwards;
+  animation-delay: 1.2s;
+}
+li._1-slide.active .anh .text > small {
+  animation: chu-chay 1s forwards;
+  animation-delay: 1.5s;
+}
+li._1-slide.active .anh .text > small::before {
+  animation: chu-chay 1s forwards;
+  animation-delay: 1.8s;
+}
+li._1-slide.active .anh .text > p {
+  animation: chu-chay 1s forwards;
+  animation-delay: 2.1s;
+}
+li._1-slide.active .anh .text > .see-project {
+  animation: chu-chay 1s forwards;
+  animation-delay: 2.4s;
+}
+@keyframes chu-chay {
+  from {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}

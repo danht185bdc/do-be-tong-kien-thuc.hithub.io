@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+* ::after,
+* ::before {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+img {
+  width: 100%;
+}
+li {
+  list-style: none;
+}
+a,
+i {
+  display: block;
+  color: inherit;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------------------------------------------------- */
+.popup .nen-den {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.561);
+  z-index: 1;
+
+  opacity: 0;
+  visibility: hidden;
+}
+.popup .nen-den.selected {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-tren {
+  position: fixed;
+  top: 0;
+}
+.noi-dung-chinh {
+  margin-top: 61px;
+
+  display: flex;
+  justify-content: space-between;
+}
+.noi-dung-chinh .trai {
+  width: calc(23% + 1px);
+  height: 100%;
+}
+.noi-dung-chinh .trai img {
+  position: fixed;
+  width: calc(23% + 1px);
+}
+.noi-dung-chinh .giua {
+  width: 40%;
+}
+.noi-dung-chinh .giua .mot-khoi {
+  width: 100%;
+  margin: 20px 2px;
+  border: 1px solid gray;
+}
+.mot-khoi .avatar {
+  display: flex;
+  margin-bottom: 10px;
+}
+.mot-khoi .avatar .a-trai {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+.mot-khoi .avatar .a-trai img {
+  height: 100%;
+  border-radius: 50%;
+}
+.mot-khoi .avatar .a-phai {
+}
+
+.mot-khoi .cac-anh {
+  width: 100%;
+}
+.mot-khoi .cac-anh img.mot-anh-tren {
+  width: 100%;
+}
+.mot-khoi .cac-anh ._3-anh-duoi img {
+  width: 32.89%;
+}
+.noi-dung-chinh .phai {
+  width: calc(17% + 2px);
+}
+.noi-dung-chinh .phai img {
+  width: calc(17% + 2px);
+  position: fixed;
+}
+
+.cac-anh img {
+  cursor: pointer;
+}

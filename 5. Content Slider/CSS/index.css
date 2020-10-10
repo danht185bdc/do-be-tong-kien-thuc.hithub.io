@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+* ::after,
+* ::before {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+img {
+  width: 100%;
+}
+li {
+  list-style: none;
+}
+a,
+i {
+  display: block;
+  color: inherit;
+}
+
+/* BIẾN */
+:root {
+  /* Border */
+  --border-1: 5px solid #47a3da;
+
+  /* Color */
+  --xanh: #47a3da;
+
+  /* Số lượng slide */
+  --total: 5;
+}
+
+/* ### */
+/* ### */
+/* ### */
+
+/* CODE HERE */
+._5-slides {
+  width: 1000px;
+  overflow: hidden;
+
+  margin: 50px auto;
+  border: var(--border-1);
+}
+
+._5-slides > ul.slide {
+  width: calc(100% * var(--total));
+  height: 545px;
+
+  transition: 0.4s;
+}
+._5-slides ul.slide > li {
+  width: calc(100% / var(--total));
+  height: 100%;
+  float: left;
+}
+._1-slide {
+  width: 100%;
+  height: 100%;
+}
+
+._5-slides ._5-nuts {
+  background-color: red;
+  width: 100%;
+  border-top: var(--border-1);
+}
+._5-slides ._5-nuts > li {
+  float: left;
+  width: calc(100% / var(--total));
+  cursor: pointer;
+
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 3rem;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+
+  color: var(--xanh);
+  border-left: var(--border-1);
+}
+._5-slides ._5-nuts > li:nth-child(1) {
+  border-left: none;
+}
+._5-slides ._5-nuts > li.active,
+._5-slides ._5-nuts > li:hover {
+  background-color: var(--xanh);
+  color: white;
+}
+
+/* Effect Slide */
+._5-slides ul.slide.so-1 {
+  transform: translateX(calc((-100% / var(--total)) * 0));
+}
+._5-slides ul.slide.so-2 {
+  transform: translateX(calc((-100% / var(--total)) * 1));
+}
+._5-slides ul.slide.so-3 {
+  transform: translateX(calc((-100% / var(--total)) * 2));
+}
+._5-slides ul.slide.so-4 {
+  transform: translateX(calc((-100% / var(--total)) * 3));
+}
+._5-slides ul.slide.so-5 {
+  transform: translateX(calc((-100% / var(--total)) * 4));
+}

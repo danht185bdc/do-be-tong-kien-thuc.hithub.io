@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+* ::after,
+* ::before {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+img {
+  width: 100%;
+}
+li {
+  list-style: none;
+}
+
+a,
+i {
+  display: block;
+  color: inherit;
+}
+
+/* ### */
+/* ### */
+/* ### */
+
+/* CODE HERE */
+.container {
+  border: 2px solid red;
+  padding: 20px;
+  margin: 20px auto 100px;
+}
+.to {
+  width: 400px;
+  height: 300px;
+
+  margin: 50px auto;
+  position: relative;
+}
+/* Hiệu ứng 1 */
+.khoi-1 {
+  perspective: 800px;
+}
+.nho img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+
+  transform-origin: 0% 0%;
+  transition: 0.4s;
+}
+.to.hieu-ung .nho img:nth-child(4) {
+  transform: rotateX(55deg);
+  transition: 0.4s;
+}
+.to.hieu-ung .nho img:nth-child(3) {
+  transform: rotateX(45deg);
+  transition: 0.4s;
+}
+.to.hieu-ung .nho img:nth-child(2) {
+  transform: rotateX(35deg);
+  transition: 0.4s;
+}
+.to.hieu-ung .nho img:nth-child(1) {
+  transform: rotateX(25deg);
+  transition: 0.4s;
+}
+
+/* Hiệu ứng 2 */
+.khoi-2 {
+  overflow: hidden;
+}
+.khoi-2::after {
+  content: "";
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  width: 150%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.37);
+
+  transition: 0.4s;
+  transform-origin: 0 0;
+}
+.khoi-2:hover:after {
+  transform: rotate(-25deg);
+  transition: 0.4s;
+}
+
+/* Hiệu ứng 3 */
+.khoi-3::before,
+.khoi-3::after {
+  content: "";
+
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  left: 20px;
+  right: 20px;
+
+  border: 1px solid white;
+  transition: 0.4s;
+  opacity: 0;
+}
+.khoi-3::before {
+  border-left-color: transparent;
+  border-right-color: transparent;
+
+  transform: scaleX(0);
+}
+.khoi-3:hover:before {
+  transition: 0.4s;
+  transform: scaleX(1.2);
+  opacity: 1;
+}
+.khoi-3::after {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+
+  transform: scaleY(0);
+}
+.khoi-3:hover:after {
+  transition: 0.4s;
+  transform: scaleY(1.1);
+  opacity: 1;
+}
+
+/* Hiệu ứng 4 */
+.khoi-4 {
+  perspective: 800px;
+  margin-top: 100px;
+}
+.khoi-4 .nho {
+  width: 100%;
+  height: 100%;
+
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg);
+  transition: 0.4s;
+}
+.khoi-4:hover .nho {
+  transform: rotateX(-25deg) rotateY(-45deg);
+  transition: 0.4s;
+}
+.khoi-4:hover .nho img:nth-child(4) {
+  transform: translateZ(0px);
+  transition: 0.4s;
+}
+.khoi-4:hover .nho img:nth-child(3) {
+  transform: translateZ(-180px);
+  transition: 0.4s;
+  transition-delay: 0.8s;
+}
+.khoi-4:hover .nho img:nth-child(2) {
+  transform: translateZ(-380px);
+  transition: 0.4s;
+  transition-delay: 0.6s;
+}
+.khoi-4:hover .nho img:nth-child(1) {
+  transform: translateZ(-580px);
+  transition: 0.4s;
+  transition-delay: 0.4s;
+}

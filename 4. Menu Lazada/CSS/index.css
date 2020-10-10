@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+* ::after,
+* ::before {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+img {
+  width: 100%;
+}
+li {
+  list-style: none;
+}
+
+a,
+i {
+  display: block;
+  color: inherit;
+}
+
+/* ### */
+/* ### */
+/* ### */
+
+/* CODE HERE */
+.menu {
+  width: 100%;
+  background-color: #183544;
+  transition: 0.2s;
+}
+
+.menu .menu-top {
+  height: 40px;
+  background-color: #11252f;
+  transition: 0.2s;
+}
+
+.menu .menu-mid {
+  background-color: #1c4a61;
+  border-bottom: 1px solid black;
+  padding: 15px;
+}
+.menu .menu-mid .logo {
+  width: 200px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+.truot-len {
+  transform: translateY(-800px);
+  transition: 0.5s;
+  transition-delay: 0.2s;
+}
+.menu .menu-mid .search {
+}
+
+.menu .menu-bottom {
+  height: 30px;
+  background-color: inherit;
+  transition: 0.2s;
+}
+.menu .menu-bottom.bot-di-ra{
+  height: 30px;
+}
+
+.noi-dung {
+  width: 400px;
+  margin: auto;
+}
+
+.bien-hinh-1 .menu-top,
+.bien-hinh-1 .menu-bottom {
+  height: 0;
+  transition: 0.4s;
+  transition-delay: 0.2s;
+}
+.menu.bien-hinh-1 {
+  position: fixed;
+  z-index: 100;
+  transition: 0.4s;
+}
+
+.tat-ca-danh-muc .nut {
+  position: absolute;
+  top: 25px;
+  left: 50px;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+
+  transition: 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100px);
+}
+.menu.bien-hinh-1 .tat-ca-danh-muc .nut {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+  transition: 0.4s;
+  transition-delay: 0.2s;
+}
